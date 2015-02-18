@@ -1,6 +1,7 @@
 class Item < ActiveRecord::Base
   belongs_to :item_type
-
+  validates :title, presence: true
+  
   def completed?
   	
   	if completed_on == nil
@@ -8,7 +9,6 @@ class Item < ActiveRecord::Base
   	else
   		true
   	end
-
   end
 
 end
